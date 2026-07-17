@@ -1,10 +1,18 @@
-﻿Console.WriteLine("Welcome, please select a dice to roll:\n");
-Console.WriteLine("Your optiions are:\n d20 \t d12 \t d10 \n d8 \t d6 \t d4 \n coin\n");
+﻿string userPointer = "null";
+
+
+
+
+Console.WriteLine("Welcome, please select a dice to roll:\n");
+Console.WriteLine("Your options are:\n d20 \t d12 \t d10 \n d8 \t d6 \t d4 \n coin\t leave\n");
+
+while(userPointer != "leave"){
 Console.Write("Select one: ");
 
 
 int roll;
-string userPointer = Console.ReadLine();
+
+userPointer = Console.ReadLine();
 
 if (userPointer == "d20")
 
@@ -17,16 +25,16 @@ Random d20 = new();
 
     if (roll == 20)
     {
-        Console.WriteLine($"Critical success!\n[{roll}]");
+        Console.WriteLine($"Critical success!\n[{roll}]\n");
     }
     else if (roll == 1)
     {
-        Console.WriteLine($"Critical failure!\n[{roll}]");
+        Console.WriteLine($"Critical failure!\n[{roll}]\n");
     }
 
     else
     {
-        Console.WriteLine($"You rolled a...\n[{roll}]");
+        Console.WriteLine($"You rolled a...\n[{roll}]\n");
     };
 
 
@@ -37,7 +45,7 @@ else if (userPointer == "d12")
 
     Random d12 = new();
     roll = d12.Next(1,13);
-    Console.WriteLine($"You rolled a\n[{roll}]");
+    Console.WriteLine($"You rolled a\n[{roll}]\n");
 
 }
 
@@ -45,28 +53,28 @@ else if (userPointer == "d10")
 {
     Random d10 = new();
     roll = d10.Next(1,11);
-    Console.WriteLine($"You rolled a\n[{roll}]");
+    Console.WriteLine($"You rolled a\n[{roll}]\n");
 }
 
 else if (userPointer == "d8")
 {
     Random d8 = new();
     roll = d8.Next(1,9);
-    Console.WriteLine($"You rolled a\n[{roll}]");
+    Console.WriteLine($"You rolled a\n[{roll}]\n");
 }
 
 else if (userPointer == "d6")
 {
     Random d6 = new();
     roll = d6.Next(1,7);
-    Console.WriteLine($"You rolled a\n[{roll}]");
+    Console.WriteLine($"You rolled a\n[{roll}]\n");
 }
 
 else if (userPointer == "d4")
 {
     Random d4 = new();
     roll = d4.Next(1,5);
-    Console.WriteLine($"You rolled a\n[{roll}]");
+    Console.WriteLine($"You rolled a\n[{roll}]\n");
 }
 
 else if (userPointer == "coin")
@@ -75,19 +83,27 @@ else if (userPointer == "coin")
     roll = coin.Next(1,3);
     if (roll == 1)
     {
-        Console.WriteLine("You got a head");
+        Console.WriteLine("You got a head\n");
     }
     else if (roll == 2)
     {
-        Console.WriteLine("You got tails");
+        Console.WriteLine("You got tails\n");
     }
     else
     {
-        Console.WriteLine("Error");
+        Console.WriteLine("Error\n");
     }
 }
 
+else if (userPointer == "leave")
+    {
+        Console.WriteLine("Ending program");
+    }
+
+
 else
 {
-    Console.WriteLine("Invalid Input");
+    Console.WriteLine("Invalid Input\n");
+}
+
 }
